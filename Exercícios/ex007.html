@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando números</title>
+
+    <style>
+        body{
+            font: normal 18pt arial;
+        }
+
+        input{
+            font: normal 13pt arial;
+        }
+
+        div#res{
+            margin-top: 18px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Somando valores</h1>
+    <input type="number" name="numero1" id="numero1"> +
+    <input type="number" name="numero2" id="numero2">
+    <input type="button" value="Somar" onclick="somar()">
+    <div id="res">O resultado aparecerá aqui</div>
+
+    <script>
+        function somar(){
+        var n1 = document.getElementById('numero1')
+        var n2 = document.querySelector('input#numero2')
+        var resultado = document.getElementById('res')
+
+        var num1 = Number(n1.value)
+        var num2 = Number(n2.value)
+
+        var res = num1 + num2
+
+        resultado.innerHTML = `A soma entre ${num1} e ${num2} é <strong>${res}</strong>`;
+
+        //TESTE
+        var pai = document.getElementById('res').parentNode
+        var filho = document.getElementById('res').childrenNode[0]
+        filho.classList.add('classe').setAttribute('data-end', '*')
+        //validções E PAH   
+
+        //TODO:
+        //Ir no css e colocar a classe
+        //colar a função e fazer as modificações
+        //Implementar p/ todos os inputs obrigatórios
+        //Testar
+
+        }
+    </script>
+</body>
+</html>

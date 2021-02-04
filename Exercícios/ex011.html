@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Países</title>
+
+    <style>
+        .classe::after {
+        content:" *"; 
+        color: red;
+        }
+
+        .form-control{
+            font-size: 18px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Verificação de Países</h1>
+    <label for="pais" class="form-control">Insira um País:</label>
+    <input type="text" name="pais" id="pais" class="required"> 
+    <input type="button" value="Verificar" onclick="Verificar()">
+    <br>
+    <div id="resultado">
+        Resultado
+    </div>
+
+    <script>
+       var label = document.querySelector('input.required')
+
+       function Verificar(){
+        var pais = document.getElementById('pais')
+        var res = document.querySelector('div#resultado')
+        var pais = String(pais.value) 
+
+        if(pais != 'Brasil'){
+            res.innerHTML = `<p>Você mora em <strong>${pais}</strong>, portanto é gringo!</p>`
+        } else{
+            res.innerHTML = `<p>Você mora no <strong>${pais}</strong>, portanto é brasileiro!`
+       }
+    }
+
+    //TESTE ÚNICA
+    var filho = document.getElementById("birthDateTextBox");
+    var pai = filho.parentNode;
+    var label = pai.children[0];
+    
+
+    </script>
+</body>
+</html>
